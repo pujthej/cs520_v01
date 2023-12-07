@@ -45,6 +45,7 @@ public class RowGameController {
      */
     public void move(JButton block) {
 	Logger.log("uses");
+	Logger.log("manipulates");
 	
 	// Check the pre-conditions for a legal move
 	BlockIndex blockIndex = this.getBlockIndex(block);
@@ -364,6 +365,7 @@ public class RowGameController {
      * Ends the game disallowing further player turns.
      */
     public void endGame() {
+	Logger.log("manipulates");
 	for(int row = 0;row<3;row++) {
 	    for(int column = 0;column<3;column++) {
 		gameModel.blocksData[row][column].setIsLegalMove(false);
@@ -378,6 +380,7 @@ public class RowGameController {
      */
     public void resetGame() {
 	Logger.log("uses");
+	Logger.log("manipulates");
 	
         for(int row = 0;row<3;row++) {
             for(int column = 0;column<3;column++) {
