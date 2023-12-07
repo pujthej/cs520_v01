@@ -91,11 +91,12 @@ public class TicTacToeGame {
      */
     protected void move(JButton block) {
 	Logger.log("uses");
+	Logger.log("manipulates");
 	
 	--movesLeft;
 	if(movesLeft%2 == 1) {
 	    playerturn.setText("'X': Player 1");
-	} else{
+	} else {
 	    playerturn.setText("'O': Player 2");
 	}
 	
@@ -422,6 +423,7 @@ public class TicTacToeGame {
      * @param column The column that contains the block
      */
     protected void updateBlock(int row, int column) {
+	Logger.log("updates");
 	blocks[row][column].setText(blocksData[row][column].getContents());
 	blocks[row][column].setEnabled(blocksData[row][column].getIsLegalMove());
     }
@@ -433,6 +435,7 @@ public class TicTacToeGame {
 	for(int row = 0;row<3;row++) {
 	    for(int column = 0;column<3;column++) {
 		blocks[row][column].setEnabled(false);
+		Logger.log("updates");
 	    }
 	}
     }
