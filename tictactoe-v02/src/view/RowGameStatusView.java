@@ -4,6 +4,7 @@ import javax.swing.JTextArea;
 import javax.swing.JPanel;
 import java.awt.*;
 import java.awt.event.*;
+import logger.Logger;
 
 import model.Player;
 import model.RowGameModel;
@@ -21,6 +22,7 @@ public class RowGameStatusView implements RowGameView {
     }
 
     public void update(RowGameModel gameModel) {
+    Logger.log("updates");
 	if (gameModel.getFinalResult() == null) {
 	    if(gameModel.getMovesLeft()%2 == 1) {
 	        playerturn.setText("'X': " + Player.PLAYER_1.getLabel());
